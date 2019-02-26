@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name = "CrossBrowserTest">
+
+    <test name="ChromeTestUkraine">
+        <parameter name="browser" value="chrome"/>
+        <parameter name="host" value=""/>
+        <parameter name="port" value=""/>
+
+        <packages>
+            <package name="tests"/>
+        </packages>
+
+    </test>
+
+    <test name="ChromeTestCis">
+        <parameter name="browser" value="chrome"/>
+        <parameter name="host" value="78.40.87.18"/>
+        <parameter name="port" value="808"/>
+
+        <packages>
+            <package name="tests"/>
+        </packages>
+
+    </test>
+
+    <test name="ChromeTestEurope">
+        <parameter name="browser" value="chrome"/>
+        <parameter name="host" value="185.112.249.186"/>
+        <parameter name="port" value="3128"/>
+
+        <packages>
+            <package name="tests"/>
+        </packages>
+
+    </test>
+
+    <test name="FirefoxTestUkraine">
+        <parameter name="browser" value="firefox"/>
+        <parameter name="host" value=""/>
+        <parameter name="port" value=""/>
+
+        <packages>
+            <package name="tests"/>
+        </packages>
+    </test>
+
+    <test name="FirefoxTestCis">
+        <parameter name="browser" value="firefox"/>
+        <parameter name="host" value="78.40.87.18"/>
+        <parameter name="port" value="808"/>
+
+        <packages>
+            <package name="tests"/>
+        </packages>
+    </test>
+
+    <test name="FirefoxTestEurope">
+        <parameter name="browser" value="firefox"/>
+        <parameter name="host" value="185.112.249.186"/>
+        <parameter name="port" value="3128"/>
+        <packages>
+            <package name="tests"/>
+        </packages>
+    </test>
+
+</suite>
+
+
+
+        <!--
+            Ukraine
+            <parameter name="host" value=""/>
+            <parameter name="port" value=""/>
+
+            CIS
+            <parameter name="host" value="78.40.87.18"/>
+            <parameter name="port" value="808"/>
+
+            Europe
+            <parameter name="host" value="185.112.249.186"/>
+               <parameter name="port" value="3128"/> -->

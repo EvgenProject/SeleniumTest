@@ -4,10 +4,13 @@ import constants.ContactNumbers;
 import constants.Proxy;
 import constants.TypeOfLending;
 import general.pages.MainPage;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.util.List;
 import java.util.Map;
+
 
 public class ActionMainPage extends MainPage {
 
@@ -23,7 +26,7 @@ public class ActionMainPage extends MainPage {
 
     public void scrollToPersonalCabinet(){
 
-        scrollUntilElementIsDisplayed(0, 1150, 50, personalCabinet);
+        scrollUntilElementIsDisplayed(0, 1150, 50, modernApproach);
     }
 
     public void moreInfoLinkClick(){
@@ -100,5 +103,15 @@ public class ActionMainPage extends MainPage {
             default:
                 return ContactNumbers.UKRAINE;
         }
+    }
+
+    public void getLocateElement() {
+        scrollAction(modernApproach);
+        waitingElement(modernApproach);
+    }
+
+    public void choose(){
+        //List<WebElement> modernApproachList = modernApproach.;
+        System.out.println(modernApproach.toString());
     }
 }

@@ -1,6 +1,6 @@
 package general.pages;
 
-import com.sun.xml.internal.bind.v2.model.core.ID;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -60,8 +60,8 @@ public class MainPage extends Page {
     @FindBy(xpath = "//div[@class = 'wrap-info-promo fadeIn is-viewed is-animate']/div[1]")
     protected WebElement typeOfLesson;
 
-    @FindBy(xpath = "//label[@for='digital-textbook-5']/span/span[1]")
-    protected WebElement personalCabinet;
+    @FindBy(xpath = "//div[@class='list-digital-textbook']")
+    protected WebElement modernApproach;
 
     @FindBy(xpath = "//div[@class='digital-textbook']//label/span/span[1]")
     protected List <WebElement> listDigitalTextbook;

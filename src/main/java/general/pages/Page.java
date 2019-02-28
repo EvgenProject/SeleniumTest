@@ -10,7 +10,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -19,12 +18,12 @@ import java.util.concurrent.TimeUnit;
 public abstract class Page {
 
     protected WebDriver driver;
-    protected Actions doAction;
+    protected Actions action;
     protected JavascriptExecutor js;
 
     public Page (WebDriver driver){
         this.driver = driver;
-        this.doAction = new Actions(driver);
+        this.action = new Actions(driver);
         this.js = (JavascriptExecutor) driver;
         PageFactory.initElements(driver, this);
     }
@@ -71,6 +70,7 @@ public abstract class Page {
         try{
             WebDriverWait wait = new WebDriverWait(this.driver, 10);
             wait.until(ExpectedConditions.visibilityOf(element));
+            element.click();
         }
         catch (TimeoutException e){
             e.printStackTrace();
@@ -98,4 +98,9 @@ public abstract class Page {
         return mapList;
     }
 
+    public void scrollAction(WebElement element){
+
+        js.executeScript("arguments[0].scrollIntoView();", element);
+        action.moveToElement(element).perform();
+    }
 }

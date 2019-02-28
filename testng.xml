@@ -14,7 +14,7 @@
 
     </test>
 
-    <test name="ChromeTestCis">
+    <!-- <test name="ChromeTestCis">
         <parameter name="browser" value="chrome"/>
         <parameter name="host" value="78.40.87.18"/>
         <parameter name="port" value="808"/>
@@ -34,9 +34,9 @@
             <package name="tests"/>
         </packages>
 
-    </test>
+    </test> -->
 
-    <test name="FirefoxTestUkraine">
+    <!--<test name="FirefoxTestUkraine">
         <parameter name="browser" value="firefox"/>
         <parameter name="host" value=""/>
         <parameter name="port" value=""/>
@@ -46,7 +46,7 @@
         </packages>
     </test>
 
-    <test name="FirefoxTestCis">
+     <test name="FirefoxTestCis">
         <parameter name="browser" value="firefox"/>
         <parameter name="host" value="78.40.87.18"/>
         <parameter name="port" value="808"/>
@@ -63,7 +63,7 @@
         <packages>
             <package name="tests"/>
         </packages>
-    </test>
+    </test> -->
 
 </suite>
 

@@ -8,10 +8,8 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 
 
-
 public class MainPage extends Page {
 
-    //private WebDriver driver;
 
     public MainPage(WebDriver driver) {
         super(driver);
@@ -63,8 +61,8 @@ public class MainPage extends Page {
     @FindBy(xpath = "//div[@class='list-digital-textbook']")
     protected WebElement modernApproach;
 
-    @FindBy(xpath = "//div[@class='digital-textbook']//label/span/span[1]")
-    protected List <WebElement> listDigitalTextbook;
+    @FindBy(xpath = "//label/span/span[1]")
+    protected WebElement listModern;
 
     @FindBy(xpath = "//div[@class='ed-container clearfix']/div[2]/img")
     protected List <WebElement> listScreenshotsTextbook;

@@ -65,25 +65,29 @@ public class ActionMainPage extends MainPage {
         }
     }
 
-    public void selectLesson(String necessaryElement){
+    public boolean isSelectLesson(String necessaryElement){
 
-        Map<WebElement, WebElement> mapList = createdMap(listDigitalTextbook, listScreenshotsTextbook);
-
+        getModernApproach();
+        Map<WebElement, WebElement> mapList = createdMap(getListDigitalTextbook(), listScreenshotsTextbook);
+        WebElement element = null;
         for(Map.Entry<WebElement, WebElement>  item : mapList.entrySet()){
 
             if(necessaryElement.equals(item.getKey().getText()) && !item.getValue().isDisplayed()) {
 
                 item.getKey().click();
+                waitingElement(item.getValue());
+                element = item.getValue();
                 break;
             }
             else if(necessaryElement.equals(item.getKey().getText()) && item.getValue().isDisplayed()) {
 
+                element = item.getValue();
                 System.out.println("Element is chosen!");
                 break;
             }
             //System.out.printf("Key: %d  Value: %s \n", item.getKey().getText(), item.getValue().getText());
         }
-
+        return element.isDisplayed();
     }
 
     public String getContactNumber(){
@@ -105,13 +109,16 @@ public class ActionMainPage extends MainPage {
         }
     }
 
-    public void getLocateElement() {
+    public void getModernApproach() {
+
         scrollAction(modernApproach);
         waitingElement(modernApproach);
     }
 
-    public void choose(){
-        //List<WebElement> modernApproachList = modernApproach.;
-        System.out.println(modernApproach.toString());
+    public List<WebElement> getListDigitalTextbook(){
+
+        List<WebElement> listDigitalTextbook = driver.findElements(By.xpath(getXpathByWebElement(modernApproach)
+                + getXpathByWebElement(listModern)));
+        return listDigitalTextbook;
     }
 }

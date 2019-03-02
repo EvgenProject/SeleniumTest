@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -70,7 +71,6 @@ public abstract class Page {
         try{
             WebDriverWait wait = new WebDriverWait(this.driver, 10);
             wait.until(ExpectedConditions.visibilityOf(element));
-            element.click();
         }
         catch (TimeoutException e){
             e.printStackTrace();
@@ -102,5 +102,15 @@ public abstract class Page {
 
         js.executeScript("arguments[0].scrollIntoView();", element);
         action.moveToElement(element).perform();
+    }
+
+    public String getXpathByWebElement(WebElement element){
+        List<String> elementList = Arrays.asList(element.toString().split(" "));
+        String xpath = " ";
+
+        for(int i = 0; i < elementList.size() - 1; i++){
+            if (elementList.get(i).equals("xpath:")) xpath = elementList.get(i+1);
+        }
+        return xpath.substring(0, xpath.length()-1);
     }
 }

@@ -1,19 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="09490272-bcbe-49b3-8953-aa7e53e1c63d" name="Default Changelist" comment="">
+    <list default="true" id="09490272-bcbe-49b3-8953-aa7e53e1c63d" name="Default Changelist" comment="Add Case2 + fix proxy + implement parser xpath">
+      <change afterPath="$PROJECT_DIR$/src/test/java/tests/Case2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/actions/with/pages/ActionMainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/actions/with/pages/ActionMainPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/constants/Proxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/constants/Proxy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/constants/TypeOfLesson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/constants/TypeOfLesson.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/general/pages/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/general/pages/MainPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/general/pages/Page.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/general/pages/Page.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/settings/SettingsDrivers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/settings/SettingsDrivers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/Case1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/Case1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/actions/with/pages/ActionMainPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/actions/with/pages/ActionMainPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/constants/ContactNumbers.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/constants/ContactNumbers.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/constants/Proxy.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/constants/Proxy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/constants/TypeOfLesson.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/constants/TypeOfLesson.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/general/pages/MainPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/general/pages/MainPage.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/general/pages/Page.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/general/pages/Page.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/settings/SettingsDrivers.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/settings/SettingsDrivers.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/tests/Case1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/tests/Case1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/tests/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/tests/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -28,20 +34,18 @@
     <window id="1">
       <content type="file-editors">
         <state>
-          <leaf>
+          <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
             <file pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/src/main/java/actions/with/pages/ActionMainPage.java">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="503">
-                    <caret line="114" column="54" selection-start-line="114" selection-start-column="54" selection-end-line="114" selection-end-column="54" />
+                  <state relative-caret-position="70">
+                    <caret line="67" column="50" lean-forward="true" selection-start-line="67" selection-start-column="50" selection-end-line="67" selection-end-column="50" />
                     <folding>
                       <element signature="imports" expanded="true" />
                       <element signature="method#scrollAndClickStartFreeBtnOnHeader#0;class#ActionMainPage#0" />
                       <element signature="method#scrollToPersonalCabinet#0;class#ActionMainPage#0" />
                       <element signature="method#chooseTypeLessons#0;class#ActionMainPage#0" />
-                      <element signature="method#selectLesson#0;class#ActionMainPage#0" />
                       <element signature="method#getNumberFromProxy#0;class#ActionMainPage#0" />
-                      <element signature="method#getLocateElement#0;class#ActionMainPage#0" />
                     </folding>
                   </state>
                 </provider>
@@ -59,46 +63,47 @@
           <entry key="project.closed" value="26" />
           <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.1" value="5" />
-          <entry key="project.open.time.10" value="2" />
+          <entry key="project.open.time.10" value="3" />
           <entry key="project.open.time.11" value="4" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.7" value="5" />
           <entry key="project.open.time.8" value="6" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="27" />
+          <entry key="project.opened" value="28" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="3" />
-          <entry key="java" value="6034" />
+          <entry key="java" value="6750" />
           <entry key="properties" value="37" />
-          <entry key="xml" value="284" />
+          <entry key="txt" value="80" />
+          <entry key="xml" value="296" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="6034" />
-          <entry key="PLAIN_TEXT" value="3" />
+          <entry key="JAVA" value="6750" />
+          <entry key="PLAIN_TEXT" value="83" />
           <entry key="Properties" value="37" />
-          <entry key="XML" value="284" />
+          <entry key="XML" value="296" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="class" value="8" />
+          <entry key="class" value="14" />
           <entry key="iml" value="1" />
-          <entry key="java" value="64" />
+          <entry key="java" value="80" />
           <entry key="properties" value="1" />
           <entry key="xml" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="8" />
+          <entry key="CLASS" value="14" />
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="64" />
+          <entry key="JAVA" value="80" />
           <entry key="Properties" value="1" />
           <entry key="XML" value="12" />
         </counts>
@@ -110,9 +115,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/general/pages/Page.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="615">
-              <caret line="100" column="16" selection-start-line="100" selection-start-column="16" selection-end-line="100" selection-end-column="16" />
+            <state relative-caret-position="176">
+              <caret line="68" column="16" selection-start-line="68" selection-start-column="16" selection-end-line="68" selection-end-column="16" />
               <folding>
+                <element signature="imports" expanded="true" />
                 <element signature="method#Page#0;class#Page#0" />
                 <element signature="method#isElementChosen#0;class#Page#0" />
                 <element signature="method#scrollUntilElementIsDisplayed#0;class#Page#0" />
@@ -127,17 +133,41 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/tests/Case1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="9" column="4" lean-forward="true" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+            <state relative-caret-position="240">
+              <caret line="19" column="26" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/tests/Case2.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/settings/SettingsDrivers.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="94" column="4" selection-start-line="94" selection-start-column="4" selection-end-line="94" selection-end-column="4" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/tests/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+            <state relative-caret-position="171">
+              <caret line="19" column="46" lean-forward="true" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -145,20 +175,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testng.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/general/pages/MainPage.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-11">
-              <caret line="22" column="32" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="165">
+              <caret line="26" column="8" lean-forward="true" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -169,8 +187,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -195,18 +213,19 @@
         <option value="$PROJECT_DIR$/src/main/java/pages/Page.java" />
         <option value="$PROJECT_DIR$/src/main/java/pages/MainPage.java" />
         <option value="$PROJECT_DIR$/src/main/java/configurations/InputDataConstants.java" />
-        <option value="$PROJECT_DIR$/src/main/java/settings/SettingsDrivers.java" />
         <option value="$PROJECT_DIR$/src/main/java/constants/TypeOfLending.java" />
-        <option value="$PROJECT_DIR$/src/main/java/constants/TypeOfLesson.java" />
-        <option value="$PROJECT_DIR$/src/main/java/constants/Proxy.java" />
         <option value="$PROJECT_DIR$/src/main/java/constants/ContactNumbers.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/general/pages/Page.java" />
+        <option value="$PROJECT_DIR$/src/main/java/constants/Proxy.java" />
         <option value="$PROJECT_DIR$/src/main/java/general/pages/MainPage.java" />
+        <option value="$PROJECT_DIR$/src/main/java/general/pages/Page.java" />
+        <option value="$PROJECT_DIR$/src/main/java/actions/with/pages/ActionMainPage.java" />
+        <option value="$PROJECT_DIR$/src/main/java/constants/TypeOfLesson.java" />
+        <option value="$PROJECT_DIR$/src/test/java/tests/Case1.java" />
+        <option value="$PROJECT_DIR$/src/test/java/tests/Case2.java" />
         <option value="$PROJECT_DIR$/src/test/java/tests/Main.java" />
         <option value="$PROJECT_DIR$/testng.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/actions/with/pages/ActionMainPage.java" />
-        <option value="$PROJECT_DIR$/src/test/java/tests/Case1.java" />
+        <option value="$PROJECT_DIR$/src/main/java/settings/SettingsDrivers.java" />
       </list>
     </option>
   </component>
@@ -218,8 +237,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1098" />
-    <option name="y" value="206" />
+    <option name="x" value="1011" />
+    <option name="y" value="247" />
     <option name="width" value="1280" />
     <option name="height" value="555" />
   </component>
@@ -229,6 +248,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -260,15 +281,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="seleniumTest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="seleniumTest" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="constants" type="462c0819:PsiDirectoryNode" />
+              <item name="settings" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="seleniumTest" type="b2602c69:ProjectViewProjectNode" />
@@ -296,13 +309,11 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/Android/Sdk" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551387200368" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551531187383" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/testng.xml" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -404,37 +415,45 @@
       <option name="presentableId" value="Default" />
       <updated>1548504449572</updated>
     </task>
+    <task id="LOCAL-00001" summary="Fix scroll">
+      <created>1551387443532</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1551387443532</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="_home_evgen_IdeaProjects_seleniumTest_testng_xml - 2019.02.28 at 22h 12m 13s.xml">
+    <history-entry file="_home_evgen_IdeaProjects_seleniumTest_testng_xml - 2019.03.02 at 13h 09m 57s.xml">
       <configuration name="/home/evgen/IdeaProjects/seleniumTest/testng.xml" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="_home_evgen_IdeaProjects_seleniumTest_testng_xml - 2019.02.28 at 22h 18m 01s.xml">
+    <history-entry file="_home_evgen_IdeaProjects_seleniumTest_testng_xml - 2019.03.02 at 14h 29m 20s.xml">
       <configuration name="/home/evgen/IdeaProjects/seleniumTest/testng.xml" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="_home_evgen_IdeaProjects_seleniumTest_testng_xml - 2019.02.28 at 22h 19m 18s.xml">
+    <history-entry file="_home_evgen_IdeaProjects_seleniumTest_testng_xml - 2019.03.02 at 14h 30m 47s.xml">
       <configuration name="/home/evgen/IdeaProjects/seleniumTest/testng.xml" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="_home_evgen_IdeaProjects_seleniumTest_testng_xml - 2019.02.28 at 22h 22m 14s.xml">
+    <history-entry file="_home_evgen_IdeaProjects_seleniumTest_testng_xml - 2019.03.02 at 14h 32m 23s.xml">
       <configuration name="/home/evgen/IdeaProjects/seleniumTest/testng.xml" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="_home_evgen_IdeaProjects_seleniumTest_testng_xml - 2019.02.28 at 22h 34m 23s.xml">
+    <history-entry file="_home_evgen_IdeaProjects_seleniumTest_testng_xml - 2019.03.02 at 14h 33m 04s.xml">
       <configuration name="/home/evgen/IdeaProjects/seleniumTest/testng.xml" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="_home_evgen_IdeaProjects_seleniumTest_testng_xml - 2019.02.28 at 22h 43m 31s.xml">
+    <history-entry file="_home_evgen_IdeaProjects_seleniumTest_testng_xml - 2019.03.02 at 14h 34m 50s.xml">
       <configuration name="/home/evgen/IdeaProjects/seleniumTest/testng.xml" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="_home_evgen_IdeaProjects_seleniumTest_testng_xml - 2019.02.28 at 22h 46m 59s.xml">
+    <history-entry file="_home_evgen_IdeaProjects_seleniumTest_testng_xml - 2019.03.02 at 14h 36m 06s.xml">
       <configuration name="/home/evgen/IdeaProjects/seleniumTest/testng.xml" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="_home_evgen_IdeaProjects_seleniumTest_testng_xml - 2019.02.28 at 22h 52m 08s.xml">
+    <history-entry file="_home_evgen_IdeaProjects_seleniumTest_testng_xml - 2019.03.02 at 14h 49m 51s.xml">
       <configuration name="/home/evgen/IdeaProjects/seleniumTest/testng.xml" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="_home_evgen_IdeaProjects_seleniumTest_testng_xml - 2019.02.28 at 22h 52m 59s.xml">
+    <history-entry file="_home_evgen_IdeaProjects_seleniumTest_testng_xml - 2019.03.02 at 14h 51m 33s.xml">
       <configuration name="/home/evgen/IdeaProjects/seleniumTest/testng.xml" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="_home_evgen_IdeaProjects_seleniumTest_testng_xml - 2019.02.28 at 22h 53m 25s.xml">
+    <history-entry file="_home_evgen_IdeaProjects_seleniumTest_testng_xml - 2019.03.02 at 14h 53m 25s.xml">
       <configuration name="/home/evgen/IdeaProjects/seleniumTest/testng.xml" configurationId="TestNG" />
     </history-entry>
   </component>
@@ -451,7 +470,7 @@
     <frame x="1366" y="-2" width="1280" height="1026" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20340356" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20907618" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -460,8 +479,8 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32962137" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49918962" visible="true" weight="0.42745537" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39967373" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49918962" visible="true" weight="0.35267857" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39955357" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32700893" />
@@ -479,38 +498,13 @@
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Maven Projects" order="8" />
     </layout>
-    <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20340356" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32962137" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49918962" visible="true" weight="0.42745537" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39967373" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32700893" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.328125" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5008104" side_tool="true" weight="0.025669644" />
-      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.32589287" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24959481" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="PlantUML" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Maven Projects" order="8" />
-    </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Fix scroll" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix scroll" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/settings/SettingsChromeDriver.java" />
@@ -575,48 +569,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/constants/TypeOfLesson.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/constants/TypeOfLending.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="11" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/constants/Proxy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/constants/ContactNumbers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/configurations/ConfigInputData.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="23" column="25" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/settings/SettingsDrivers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
-          <caret line="56" column="63" selection-start-line="56" selection-start-column="32" selection-end-line="56" selection-end-column="63" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -641,11 +597,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/testng/testng/6.14.2/testng-6.14.2.jar!/org/testng/TestNG.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3">
+          <caret line="284" column="41" lean-forward="true" selection-start-line="284" selection-start-column="41" selection-end-line="284" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/constants/TypeOfLending.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="11" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/constants/ContactNumbers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/general/pages/Page.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="100" column="16" selection-start-line="100" selection-start-column="16" selection-end-line="100" selection-end-column="16" />
+        <state relative-caret-position="176">
+          <caret line="68" column="16" selection-start-line="68" selection-start-column="16" selection-end-line="68" selection-end-column="16" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="method#Page#0;class#Page#0" />
             <element signature="method#isElementChosen#0;class#Page#0" />
             <element signature="method#scrollUntilElementIsDisplayed#0;class#Page#0" />
@@ -656,50 +634,93 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/testng/testng/6.14.2/testng-6.14.2.jar!/org/testng/Assert.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="87">
+          <caret line="31" column="23" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
+          <folding>
+            <element signature="e#815#816#0" expanded="true" />
+            <element signature="e#861#862#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/general/pages/MainPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-11">
-          <caret line="22" column="32" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
+        <state relative-caret-position="333">
+          <caret line="64" column="25" selection-start-line="64" selection-start-column="25" selection-end-line="64" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/constants/Proxy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/constants/TypeOfLesson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="51" selection-start-line="8" selection-start-column="51" selection-end-line="8" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/tests/Case1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="19" column="26" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/actions/with/pages/ActionMainPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="503">
-          <caret line="114" column="54" selection-start-line="114" selection-start-column="54" selection-end-line="114" selection-end-column="54" />
+        <state relative-caret-position="70">
+          <caret line="67" column="50" lean-forward="true" selection-start-line="67" selection-start-column="50" selection-end-line="67" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#scrollAndClickStartFreeBtnOnHeader#0;class#ActionMainPage#0" />
             <element signature="method#scrollToPersonalCabinet#0;class#ActionMainPage#0" />
             <element signature="method#chooseTypeLessons#0;class#ActionMainPage#0" />
-            <element signature="method#selectLesson#0;class#ActionMainPage#0" />
             <element signature="method#getNumberFromProxy#0;class#ActionMainPage#0" />
-            <element signature="method#getLocateElement#0;class#ActionMainPage#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/tests/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="19" column="46" lean-forward="true" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/tests/Case2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/testng.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
+        <state relative-caret-position="165">
+          <caret line="26" column="8" lean-forward="true" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/tests/Case1.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/settings/SettingsDrivers.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="9" column="4" lean-forward="true" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/tests/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        <state relative-caret-position="408">
+          <caret line="94" column="4" selection-start-line="94" selection-start-column="4" selection-end-line="94" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

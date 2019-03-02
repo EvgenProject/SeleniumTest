@@ -77,19 +77,20 @@ public abstract class SettingsDrivers {
     @AfterClass
     public void quiteDriver(){
 
-        if(driver != null)
+        /*if(driver != null)
         {
             browserName = ((RemoteWebDriver) driver).getCapabilities().getBrowserName().toLowerCase();
 
             if (browserName.equals(InputDataConstants.CHROME)) {
-                driver.close();
-            }
-            else if (browserName.equals(InputDataConstants.FIREFOX)) {
+                //driver.close();
                 driver.quit();
             }
-        }
+            else if (browserName.equals(InputDataConstants.FIREFOX)) {
+                //driver.close();
+                driver.quit();
+            }
+        }*/
+        if(driver != null) driver.quit();
     }
-
-
-
+    
 }

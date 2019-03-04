@@ -3,13 +3,18 @@
 
 <suite name = "CrossBrowserTest">
 
-    <test name = "Test1">
+
+    <test name = "Test">
         <classes>
-            <class name="tests.SearchFactory" />
+            <class name="tests.Test1"/>
+            <class name="tests.Test2"/>
         </classes>
     </test>
 
     <!--
+
+
+
         <test name="ChromeTestUkraine">
             <parameter name="browser" value="chrome"/>
             <parameter name="host" value=""/>

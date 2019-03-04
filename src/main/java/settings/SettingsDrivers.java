@@ -24,13 +24,13 @@ public abstract class SettingsDrivers {
     {
         if (browser.equals(InputDataConstants.CHROME)) {
             System.setProperty("webdriver.chrome.driver", SettingsDrivers.class.getClassLoader().
-                    getResource("chromedriver").getPath());
+                    getResource("chromedriver.exe").getPath());
             driver = new ChromeDriver(switchOffNotificationForChrome(host, port));
             getProxy(host, port);
         }
         else if (browser.equals(InputDataConstants.FIREFOX)){
             System.setProperty("webdriver.gecko.driver", SettingsDrivers.class.getClassLoader().
-                    getResource("geckodriver").getPath());
+                    getResource("geckodriver.exe").getPath());
             driver = new FirefoxDriver(switchOffNotificationForFirefox(host, port));
             getProxy(host, port);
         }

@@ -20,7 +20,7 @@ public class Case2 extends SettingsDrivers {
      *     - ONLINE_CLASSES
      * </li>
      */
-    @Test()
+    @Test(enabled = false)
     public void Test() {
 
         mainPage = new ActionMainPage(driver);

@@ -7,7 +7,6 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.*;
 
 import java.util.HashMap;
@@ -17,13 +16,10 @@ import java.util.concurrent.TimeUnit;
 public abstract class SettingsDrivers {
 
     protected WebDriver driver;
-    private String browserName;
     public static String proxy = null;
 
-    @Parameters({"browser", "host", "port"})
-
-
-    @BeforeClass
+    //@Parameters({"browser", "host", "port"})
+    //@BeforeClass
     public void activateDriver(String browser, String host, String port)
     {
         if (browser.equals(InputDataConstants.CHROME)) {
@@ -77,20 +73,7 @@ public abstract class SettingsDrivers {
     @AfterClass
     public void quiteDriver(){
 
-        /*if(driver != null)
-        {
-            browserName = ((RemoteWebDriver) driver).getCapabilities().getBrowserName().toLowerCase();
-
-            if (browserName.equals(InputDataConstants.CHROME)) {
-                //driver.close();
-                driver.quit();
-            }
-            else if (browserName.equals(InputDataConstants.FIREFOX)) {
-                //driver.close();
-                driver.quit();
-            }
-        }*/
         if(driver != null) driver.quit();
     }
-    
+
 }

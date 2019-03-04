@@ -109,16 +109,21 @@ public class ActionMainPage extends MainPage {
         }
     }
 
-    public void getModernApproach() {
+    private void getModernApproach() {
 
         scrollAction(modernApproach);
         waitingElement(modernApproach);
     }
 
-    public List<WebElement> getListDigitalTextbook(){
+    private List<WebElement> getListDigitalTextbook(){
 
         List<WebElement> listDigitalTextbook = driver.findElements(By.xpath(getXpathByWebElement(modernApproach)
                 + getXpathByWebElement(listModern)));
         return listDigitalTextbook;
+    }
+
+    public void test(){
+
+
     }
 }

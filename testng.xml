@@ -3,6 +3,13 @@
 
 <suite name = "CrossBrowserTest">
 
+    <test name = "Test1">
+        <classes>
+            <class name="tests.SearchFactory" />
+        </classes>
+    </test>
+
+    <!--
         <test name="ChromeTestUkraine">
             <parameter name="browser" value="chrome"/>
             <parameter name="host" value=""/>
@@ -24,7 +31,7 @@
                 </packages>
 
             </test>
-    <!--
+
            <test name="ChromeTestEurope">
                <parameter name="browser" value="chrome"/>
                <parameter name="host" value="194.25.1.196"/>
@@ -35,7 +42,7 @@
                </packages>
 
            </test>
-   -->
+
             <test name="FirefoxTestUkraine">
                 <parameter name="browser" value="firefox"/>
                 <parameter name="host" value=""/>
@@ -46,6 +53,7 @@
                 </packages>
             </test>
 
+
              <test name="FirefoxTestCis">
                 <parameter name="browser" value="firefox"/>
                 <parameter name="host" value="78.40.87.18"/>
@@ -55,7 +63,7 @@
                     <package name="tests"/>
                 </packages>
             </test>
-   <!--
+
             <test name="FirefoxTestEurope">
                 <parameter name="browser" value="firefox"/>
                 <parameter name="host" value="194.25.1.196"/>

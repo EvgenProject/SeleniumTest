@@ -47,7 +47,7 @@ public abstract class Page {
 
         do{
             try {
-                TimeUnit.SECONDS.sleep(1);
+                TimeUnit.MILLISECONDS.sleep(250);
                 scroll(pointX, pointY);
                 pointY += scrollLength;
             }

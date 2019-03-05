@@ -13,7 +13,8 @@
 
     <!--
 
-
+        <class name="tests.Test1"/>
+            <class name="tests.Test2"/>
 
         <test name="ChromeTestUkraine">
             <parameter name="browser" value="chrome"/>

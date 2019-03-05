@@ -21,5 +21,26 @@ public class SingPage extends Page {
     @FindBy(xpath = "//a[@data-tab='register']")
     protected WebElement loginBtn;
 
+    @FindBy(xpath = "//div[@class='input-group']/input[@type='email']")
+    protected WebElement emailField;
+
+    @FindBy(xpath = "//div[@class='input-group']/input[@type='password']")
+    protected WebElement passwordField;
+
+    //registration
+    @FindBy(id = "ptn-registration-bnt")
+    protected WebElement signUp;
+
+    @FindBy(xpath = "//span[@class='link condition-btn']")
+    protected WebElement agreementLink;
+
+    //login
+    @FindBy(xpath = "//input[@type='submit']")
+    protected WebElement signIn;
+
+    @FindBy(xpath = "//a[@data-tab='forgot']")
+    protected WebElement forgotPassLink;
+
+    //social network
 
 }

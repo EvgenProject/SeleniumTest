@@ -5,10 +5,10 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Factory;
 import org.testng.annotations.Test;
-import settings.SettingsDrivers;
+import settings.TestFrame;
 
 
-class Main extends SettingsDrivers{
+class Main extends TestFrame {
 
 
     ActionMainPage mainPage = null;
@@ -30,8 +30,8 @@ class Main extends SettingsDrivers{
 
         mainPage = new ActionMainPage(driver);
         System.out.println(mainPage.getContactNumber());
-        System.out.println(mainPage.getNumberFromProxy(SettingsDrivers.proxy));
-        Assert.assertEquals(mainPage.getContactNumber(), mainPage.getNumberFromProxy(SettingsDrivers.proxy));
+        System.out.println(mainPage.getNumberFromProxy(TestFrame.proxy));
+        Assert.assertEquals(mainPage.getContactNumber(), mainPage.getNumberFromProxy(TestFrame.proxy));
 
     }
 

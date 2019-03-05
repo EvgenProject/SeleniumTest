@@ -13,7 +13,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-public abstract class SettingsDrivers {
+public abstract class TestFrame {
 
     protected WebDriver driver;
     public static String proxy = null;
@@ -23,14 +23,14 @@ public abstract class SettingsDrivers {
     public void activateDriver(String browser, String host, String port)
     {
         if (browser.equals(InputDataConstants.CHROME)) {
-            System.setProperty("webdriver.chrome.driver", SettingsDrivers.class.getClassLoader().
-                    getResource("chromedriver.exe").getPath());
+            System.setProperty("webdriver.chrome.driver", TestFrame.class.getClassLoader().
+                    getResource("chromedriver").getPath());
             driver = new ChromeDriver(switchOffNotificationForChrome(host, port));
             getProxy(host, port);
         }
         else if (browser.equals(InputDataConstants.FIREFOX)){
-            System.setProperty("webdriver.gecko.driver", SettingsDrivers.class.getClassLoader().
-                    getResource("geckodriver.exe").getPath());
+            System.setProperty("webdriver.gecko.driver", TestFrame.class.getClassLoader().
+                    getResource("geckodriver-v0.23.0-linux64/geckodriver").getPath());
             driver = new FirefoxDriver(switchOffNotificationForFirefox(host, port));
             getProxy(host, port);
         }

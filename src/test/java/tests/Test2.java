@@ -6,9 +6,9 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Factory;
 import org.testng.annotations.Test;
-import settings.SettingsDrivers;
+import settings.TestFrame;
 
-class Case2 extends SettingsDrivers {
+class Case2 extends TestFrame {
 
     ActionMainPage mainPage = null;
     private String browser, host, port;

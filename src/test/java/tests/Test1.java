@@ -5,9 +5,9 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Factory;
 import org.testng.annotations.Test;
-import settings.SettingsDrivers;
+import settings.TestFrame;
 
-class Case1 extends SettingsDrivers {
+class Case1 extends TestFrame {
 
     ActionMainPage mainPage = null;
     private String browser, host, port;
@@ -36,8 +36,8 @@ class Case1 extends SettingsDrivers {
 
         mainPage = new ActionMainPage(driver);
         System.out.println(mainPage.getContactNumber());
-        System.out.println(mainPage.getNumberFromProxy(SettingsDrivers.proxy));
-        Assert.assertEquals(mainPage.getContactNumber(), mainPage.getNumberFromProxy(SettingsDrivers.proxy));
+        System.out.println(mainPage.getNumberFromProxy(TestFrame.proxy));
+        Assert.assertEquals(mainPage.getContactNumber(), mainPage.getNumberFromProxy(TestFrame.proxy));
     }
 }
 

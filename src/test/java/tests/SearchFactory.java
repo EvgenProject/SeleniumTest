@@ -1,5 +1,6 @@
 package tests;
 
+import actions.with.pages.ActionContactPage;
 import actions.with.pages.ActionMainPage;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
@@ -12,6 +13,7 @@ class Main extends TestFrame {
 
 
     ActionMainPage mainPage = null;
+    ActionContactPage contactPage = null;
     private String browser, host, port;
 
     Main(String browser, String host, String port){
@@ -25,14 +27,18 @@ class Main extends TestFrame {
         super.activateDriver(browser, host, port);
     }
 
-    @Test(enabled = false)
+    @Test(enabled = true)
     public void Test(){
 
         mainPage = new ActionMainPage(driver);
-        System.out.println(mainPage.getContactNumber());
+        /*System.out.println(mainPage.getContactNumber());
         System.out.println(mainPage.getNumberFromProxy(TestFrame.proxy));
+        Assert.assertEquals(mainPage.getContactNumber(), mainPage.getNumberFromProxy(TestFrame.proxy));*/
         Assert.assertEquals(mainPage.getContactNumber(), mainPage.getNumberFromProxy(TestFrame.proxy));
-
+        contactPage = mainPage.openContactWindow();
+        System.out.println(contactPage.getContactNumber());
+        System.out.println(contactPage.getNumberInField());
+        Assert.assertEquals(contactPage.getNumberInField(), contactPage.getFormatByProxy());
     }
 
 }
@@ -50,5 +56,4 @@ public class SearchFactory{
                 new Main("firefox", "194.25.1.196", "3128")
         };
     }
-
 }

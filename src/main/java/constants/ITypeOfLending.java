@@ -1,6 +1,6 @@
 package constants;
 
-public interface TypeOfLending {
+public interface ITypeOfLending {
 
     String INDIVIDUAL = "button-switch";
     String FOR_CHILDREN = "button-switch -kids js-links-switch";

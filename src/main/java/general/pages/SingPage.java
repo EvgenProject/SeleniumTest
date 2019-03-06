@@ -2,8 +2,11 @@ package general.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import java.util.List;
 
 public class SingPage extends Page {
 
@@ -12,18 +15,23 @@ public class SingPage extends Page {
         PageFactory.initElements(driver, this);
     }
 
+    @CacheLookup
     @FindBy(xpath = "//a[@class='esc i-close js-esc']")
     protected WebElement closeBtn;
 
+    @CacheLookup
     @FindBy(xpath = "//a[@data-tab='register']")
     protected WebElement registerBtn;
 
-    @FindBy(xpath = "//a[@data-tab='register']")
+    @CacheLookup
+    @FindBy(xpath = "//a[@data-tab='login']")
     protected WebElement loginBtn;
 
+    @CacheLookup
     @FindBy(xpath = "//div[@class='input-group']/input[@type='email']")
     protected WebElement emailField;
 
+    @CacheLookup
     @FindBy(xpath = "//div[@class='input-group']/input[@type='password']")
     protected WebElement passwordField;
 
@@ -42,5 +50,8 @@ public class SingPage extends Page {
     protected WebElement forgotPassLink;
 
     //social network
+    @CacheLookup
+    @FindBy(xpath = "//ul[@class='list-messengers']//a")
+    protected List<WebElement> socialNetworkContainer;
 
 }

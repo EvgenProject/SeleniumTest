@@ -1,5 +1,7 @@
 package general.pages;
 
+import constants.IContactNumbers;
+import constants.IProxy;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
@@ -112,5 +114,20 @@ public abstract class Page {
             if (elementList.get(i).equals("xpath:")) xpath = elementList.get(i+1);
         }
         return xpath.substring(0, xpath.length()-1);
+    }
+
+    public String getNumberFromProxy(String proxy){
+
+        switch (proxy){
+
+            case IProxy.CIS:
+                return IContactNumbers.CIS;
+
+            case IProxy.EUROPE:
+                return IContactNumbers.EUROPE;
+
+            default:
+                return IContactNumbers.UKRAINE;
+        }
     }
 }

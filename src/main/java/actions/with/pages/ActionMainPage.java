@@ -1,8 +1,8 @@
 package actions.with.pages;
 
-import constants.ContactNumbers;
-import constants.Proxy;
-import constants.TypeOfLending;
+import constants.IContactNumbers;
+import constants.IProxy;
+import constants.ITypeOfLending;
 import general.pages.MainPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -47,15 +47,15 @@ public class ActionMainPage extends MainPage {
 
             switch (attribute){
 
-                case TypeOfLending.INDIVIDUAL:
+                case ITypeOfLending.INDIVIDUAL:
                     clickOnBtnOrLink(individLink);
                     break;
 
-                case TypeOfLending.FOR_CHILDREN:
+                case ITypeOfLending.FOR_CHILDREN:
                     clickOnBtnOrLink(childrenLink);
                     break;
 
-                case TypeOfLending.FOR_COMPANY:
+                case ITypeOfLending.FOR_COMPANY:
                     clickOnBtnOrLink(companiesLink);
                     break;
             }
@@ -94,21 +94,6 @@ public class ActionMainPage extends MainPage {
         return contactNumberLink.getText();
     }
 
-    public String getNumberFromProxy(String proxy){
-
-        switch (proxy){
-
-            case Proxy.CIS:
-                return ContactNumbers.CIS;
-
-            case Proxy.EUROPE:
-                return ContactNumbers.EUROPE;
-
-            default:
-                return ContactNumbers.UKRAINE;
-        }
-    }
-
     private void getModernApproach() {
 
         scrollAction(modernApproach);
@@ -120,6 +105,13 @@ public class ActionMainPage extends MainPage {
         List<WebElement> listDigitalTextbook = driver.findElements(By.xpath(getXpathByWebElement(modernApproach)
                 + getXpathByWebElement(listModern)));
         return listDigitalTextbook;
+    }
+
+    public ActionContactPage openContactWindow() {
+
+        contactLink.click();
+        waitingElement(contactWindow);
+        return new ActionContactPage(driver);
     }
 
     public void test(){

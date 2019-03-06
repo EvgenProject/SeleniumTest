@@ -1,7 +1,7 @@
 package tests;
 
 import actions.with.pages.ActionMainPage;
-import constants.TypeOfLesson;
+import constants.ITypeOfLesson;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Factory;
@@ -34,16 +34,16 @@ class Case2 extends TestFrame {
      *     - ONLINE_CLASSES
      * </li>
      */
-    @Test(enabled = true)
+    @Test(enabled = false)
     public void Test() {
 
         mainPage = new ActionMainPage(driver);
 
-        Assert.assertTrue(mainPage.isSelectLesson(TypeOfLesson.DIGITAL_TUTORIAL));
-        Assert.assertTrue(mainPage.isSelectLesson(TypeOfLesson.SPEAKING_CLUBS));
-        Assert.assertTrue(mainPage.isSelectLesson(TypeOfLesson.IMMERSION_IN_ENGLISH));
-        Assert.assertTrue(mainPage.isSelectLesson(TypeOfLesson.PERSONAL_CABINET));
-        Assert.assertTrue(mainPage.isSelectLesson(TypeOfLesson.ONLINE_CLASSES));
+        Assert.assertTrue(mainPage.isSelectLesson(ITypeOfLesson.DIGITAL_TUTORIAL));
+        Assert.assertTrue(mainPage.isSelectLesson(ITypeOfLesson.SPEAKING_CLUBS));
+        Assert.assertTrue(mainPage.isSelectLesson(ITypeOfLesson.IMMERSION_IN_ENGLISH));
+        Assert.assertTrue(mainPage.isSelectLesson(ITypeOfLesson.PERSONAL_CABINET));
+        Assert.assertTrue(mainPage.isSelectLesson(ITypeOfLesson.ONLINE_CLASSES));
     }
 }
 

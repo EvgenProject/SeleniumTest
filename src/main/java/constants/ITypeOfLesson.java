@@ -1,6 +1,6 @@
 package constants;
 
-public interface TypeOfLesson {
+public interface ITypeOfLesson {
 
     String ONLINE_CLASSES = "Занятия онлайн";
     String DIGITAL_TUTORIAL = "Цифровой учебник";

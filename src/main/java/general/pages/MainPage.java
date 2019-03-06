@@ -3,6 +3,7 @@ package general.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -17,6 +18,7 @@ public class MainPage extends Page {
         PageFactory.initElements(driver, this);
     }
 
+    @CacheLookup
     @FindBy(xpath = "//div[@class = 'top-line']//nav//a[@class = 'logo']")
     protected WebElement mainLogo;
 
@@ -39,35 +41,45 @@ public class MainPage extends Page {
     @FindBy(xpath = "//div[@class = 'top-line']//nav//a[@class = 'link-item-menu']")
     protected WebElement onlineSimulatorBtn;
 
+    @CacheLookup
     @FindBy(xpath = "//div[@class = 'info-promo']//a[@href = '/']")
     protected WebElement individLink;
 
+    @CacheLookup
     @FindBy(xpath = "//div[@class = 'info-promo']//a[@href = '/kids']")
     protected WebElement childrenLink;
 
+    @CacheLookup
     @FindBy(xpath = "//div[@class = 'info-promo']//a[@href = '/corp']")
     protected WebElement companiesLink;
 
+    @CacheLookup
     @FindBy(xpath = "//div[@class = 'more-info']/a[@class = 'watch-video']")
     protected WebElement moreInfoLink;
 
+    @CacheLookup
     @FindBy(xpath = "//div[@class = 'wrapper-landing-btn']/a")
     protected WebElement startFreeBtnOnLanding;
 
     @FindBy(xpath = "//div[@class = 'main-container']//div[@class = 'arrow-down js-arrow-down']")
     protected WebElement arrowDown;
 
+    @CacheLookup
     @FindBy(xpath = "//div[@class = 'wrap-info-promo fadeIn is-viewed is-animate']/div[1]")
     protected WebElement typeOfLesson;
 
+    @CacheLookup
     @FindBy(xpath = "//div[@class='list-digital-textbook']")
     protected WebElement modernApproach;
 
+    @CacheLookup
     @FindBy(xpath = "//label/span/span[1]")
     protected WebElement listModern;
 
+    @CacheLookup
     @FindBy(xpath = "//div[@class='ed-container clearfix']/div[2]/img")
     protected List <WebElement> listScreenshotsTextbook;
 
-
+    @FindBy(xpath = "//div[@class='container-contacts-tooltip']")
+    protected WebElement contactWindow;
 }

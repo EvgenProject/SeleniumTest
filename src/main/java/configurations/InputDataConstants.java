@@ -2,8 +2,8 @@ package configurations;
 
 public interface InputDataConstants {
 
-    public static final String LOGIN = ConfigInputData.getProperty("login").trim();
-    public static final String PASSWORD = ConfigInputData.getProperty("password").trim();
-    public static final String CHROME = ConfigInputData.getProperty("chrome").trim();
-    public static final String FIREFOX = ConfigInputData.getProperty("firefox").trim();
+    String LOGIN = ConfigInputData.getProperty("login").trim();
+    String PASSWORD = ConfigInputData.getProperty("password").trim();
+    String CHROME = ConfigInputData.getProperty("chrome").trim();
+    String FIREFOX = ConfigInputData.getProperty("firefox").trim();
 }

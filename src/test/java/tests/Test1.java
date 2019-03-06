@@ -1,5 +1,6 @@
 package tests;
 
+import actions.with.pages.ActionContactPage;
 import actions.with.pages.ActionMainPage;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
@@ -10,6 +11,7 @@ import settings.TestFrame;
 class Case1 extends TestFrame {
 
     ActionMainPage mainPage = null;
+    ActionContactPage contactPage = null;
     private String browser, host, port;
 
     Case1(String browser, String host, String port){
@@ -31,13 +33,15 @@ class Case1 extends TestFrame {
      *     - EUROPE
      * </li>
      */
-    @Test(enabled = true)
+    @Test(enabled = false)
     public void Test() {
 
         mainPage = new ActionMainPage(driver);
         System.out.println(mainPage.getContactNumber());
         System.out.println(mainPage.getNumberFromProxy(TestFrame.proxy));
         Assert.assertEquals(mainPage.getContactNumber(), mainPage.getNumberFromProxy(TestFrame.proxy));
+
+
     }
 }
 

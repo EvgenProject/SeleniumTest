@@ -33,14 +33,26 @@ class Case1 extends TestFrame {
      *     - EUROPE
      * </li>
      */
-    @Test(enabled = false)
+    @Test(enabled = true)
     public void Test() {
 
+        //Step 1
         mainPage = new ActionMainPage(driver);
-        System.out.println(mainPage.getContactNumber());
-        System.out.println(mainPage.getNumberFromProxy(TestFrame.proxy));
-        Assert.assertEquals(mainPage.getContactNumber(), mainPage.getNumberFromProxy(TestFrame.proxy));
+        Assert.assertEquals(mainPage.getContactNumber(), mainPage.getNumberFromProxy());
 
+        //Step 2
+        contactPage = mainPage.openContactWindow();
+        Assert.assertEquals(contactPage.getContactNumber(), mainPage.getNumberFromProxy());
+
+        //Step3
+        Assert.assertEquals(contactPage.getFormatNumberInField(), contactPage.getFormatByProxy());
+        mainPage.hideContactWindow();
+
+        //Step4
+        Assert.assertEquals(mainPage.getFooterContactNumber(), mainPage.getNumberFromProxy());
+
+        //Step5
+        Assert.assertEquals(mainPage.getFormatNumberCallMeBackWindow(), mainPage.getFormatByProxy());
 
     }
 }

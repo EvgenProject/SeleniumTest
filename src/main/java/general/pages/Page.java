@@ -1,6 +1,7 @@
 package general.pages;
 
 import constants.IContactNumbers;
+import constants.IFormatNumbers;
 import constants.IProxy;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.TimeoutException;
@@ -11,6 +12,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import settings.TestFrame;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -104,6 +106,7 @@ public abstract class Page {
 
         js.executeScript("arguments[0].scrollIntoView();", element);
         action.moveToElement(element).perform();
+        waitingElement(element);
     }
 
     public String getXpathByWebElement(WebElement element){
@@ -116,9 +119,9 @@ public abstract class Page {
         return xpath.substring(0, xpath.length()-1);
     }
 
-    public String getNumberFromProxy(String proxy){
+    public String getNumberFromProxy(){
 
-        switch (proxy){
+        switch (TestFrame.proxy){
 
             case IProxy.CIS:
                 return IContactNumbers.CIS;
@@ -129,5 +132,24 @@ public abstract class Page {
             default:
                 return IContactNumbers.UKRAINE;
         }
+    }
+
+    private Map <String, String>  getListNumbers(){
+        Map <String, String> listNumbers = new HashMap();
+        listNumbers.put(IContactNumbers.UKRAINE, IFormatNumbers.UKRAINE);
+        listNumbers.put(IContactNumbers.CIS, IFormatNumbers.CIS);
+        listNumbers.put(IContactNumbers.EUROPE, IFormatNumbers.EUROPE);
+        return listNumbers;
+    }
+
+    public String getFormatByProxy(){
+
+        Map<String, String> mapList =  getListNumbers();
+        String formatNumber = "Matching is absent";
+        for(Map.Entry<String, String>  item : mapList.entrySet()){
+            if(item.getKey().equals(getNumberFromProxy()))
+                formatNumber = item.getValue();
+        }
+        return formatNumber;
     }
 }

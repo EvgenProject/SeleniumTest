@@ -27,18 +27,20 @@ class Main extends TestFrame {
         super.activateDriver(browser, host, port);
     }
 
-    @Test(enabled = true)
+    @Test(enabled = false)
     public void Test(){
 
         mainPage = new ActionMainPage(driver);
-        /*System.out.println(mainPage.getContactNumber());
-        System.out.println(mainPage.getNumberFromProxy(TestFrame.proxy));
-        Assert.assertEquals(mainPage.getContactNumber(), mainPage.getNumberFromProxy(TestFrame.proxy));*/
-        Assert.assertEquals(mainPage.getContactNumber(), mainPage.getNumberFromProxy(TestFrame.proxy));
         contactPage = mainPage.openContactWindow();
-        System.out.println(contactPage.getContactNumber());
-        System.out.println(contactPage.getNumberInField());
-        Assert.assertEquals(contactPage.getNumberInField(), contactPage.getFormatByProxy());
+        Assert.assertEquals(contactPage.getContactNumber(), mainPage.getNumberFromProxy());
+        Assert.assertEquals(contactPage.getFormatNumberInField(), contactPage.getFormatByProxy());
+        mainPage.hideContactWindow();
+        Assert.assertEquals(mainPage.getFormatNumberInField(), mainPage.getFormatByProxy());
+        Assert.assertEquals(mainPage.getFooterContactNumber(), mainPage.getNumberFromProxy());
+
+        //System.out.println(mainPage.getFormatNumberCallMeBackWindow());
+        Assert.assertEquals(mainPage.getFormatNumberCallMeBackWindow(), mainPage.getFormatByProxy());
+
     }
 
 }
@@ -49,11 +51,13 @@ public class SearchFactory{
     public Object [] createInstances() {
         return new Object[] {
                 new Main("chrome", "", ""),
-                new Main("firefox", "", ""),
+                new Main("firefox", "", "")
+                /*new Main("chrome", "", ""),
+                new Main("firefox", "", "")
                 new Main("chrome", "78.40.87.18", "808"),
                 new Main("firefox", "78.40.87.18", "808"),
                 new Main("chrome", "194.25.1.196", "3128"),
-                new Main("firefox", "194.25.1.196", "3128")
+                new Main("firefox", "194.25.1.196", "3128")*/
         };
     }
 }

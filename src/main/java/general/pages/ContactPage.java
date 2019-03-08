@@ -32,11 +32,11 @@ public class ContactPage extends Page{
     protected WebElement contactEmail;
 
     @CacheLookup
-    @FindBy(xpath = "//input[@id='tooltip-form-name']")
+    @FindBy(xpath = "tooltip-form-name")
     protected WebElement fieldName;
 
     @CacheLookup
-    @FindBy(xpath = "//input[@id='form-tel']")
+    @FindBy(id = "form-tel")
     protected WebElement fieldNumber;
 
     @CacheLookup

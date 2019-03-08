@@ -1,7 +1,5 @@
 package actions.with.pages;
 
-import constants.IContactNumbers;
-import constants.IProxy;
 import constants.ITypeOfLending;
 import general.pages.MainPage;
 import org.openqa.selenium.By;
@@ -67,7 +65,7 @@ public class ActionMainPage extends MainPage {
 
     public boolean isSelectLesson(String necessaryElement){
 
-        getModernApproach();
+        scrollAction(modernApproach);
         Map<WebElement, WebElement> mapList = createdMap(getListDigitalTextbook(), listScreenshotsTextbook);
         WebElement element = null;
         for(Map.Entry<WebElement, WebElement>  item : mapList.entrySet()){
@@ -94,10 +92,22 @@ public class ActionMainPage extends MainPage {
         return contactNumberLink.getText();
     }
 
-    private void getModernApproach() {
+    public String getFormatNumberInField(){
+        scrollAction(formatNumberForFreeLesson);
+        return formatNumberForFreeLesson.getAttribute("placeholder");
+    }
 
-        scrollAction(modernApproach);
-        waitingElement(modernApproach);
+    public String getFooterContactNumber(){
+        scrollAction(contactNumberFooter);
+        return contactNumberFooter.getText();
+    }
+
+    public String getFormatNumberCallMeBackWindow(){
+        scrollAction(callMeBack);
+        waitingElement(callMeBack);
+        callMeBack.click();
+        waitingElement(fieldNumber);
+        return fieldNumber.getAttribute("placeholder");
     }
 
     private List<WebElement> getListDigitalTextbook(){
@@ -114,8 +124,8 @@ public class ActionMainPage extends MainPage {
         return new ActionContactPage(driver);
     }
 
-    public void test(){
-
-
+    public void hideContactWindow(){
+        contactLink.click();
     }
+
 }

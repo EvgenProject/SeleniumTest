@@ -4,16 +4,15 @@ import actions.with.pages.ActionMainPage;
 import constants.ITypeOfLesson;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Factory;
 import org.testng.annotations.Test;
 import settings.TestFrame;
 
-class Case2 extends TestFrame {
+public class Case2 extends TestFrame {
 
     ActionMainPage mainPage = null;
     private String browser, host, port;
 
-    Case2(String browser, String host, String port){
+    public Case2(String browser, String host, String port){
         this.browser = browser;
         this.host = host;
         this.port = port;
@@ -34,7 +33,7 @@ class Case2 extends TestFrame {
      *     - ONLINE_CLASSES
      * </li>
      */
-    @Test(enabled = false)
+    @Test(enabled = true)
     public void Test() {
 
         mainPage = new ActionMainPage(driver);
@@ -44,16 +43,5 @@ class Case2 extends TestFrame {
         Assert.assertTrue(mainPage.isSelectLesson(ITypeOfLesson.IMMERSION_IN_ENGLISH));
         Assert.assertTrue(mainPage.isSelectLesson(ITypeOfLesson.PERSONAL_CABINET));
         Assert.assertTrue(mainPage.isSelectLesson(ITypeOfLesson.ONLINE_CLASSES));
-    }
-}
-
-public class Test2{
-
-    @Factory
-    public Object [] createInstances() {
-        return new Object[] {
-                new Case2("chrome", "", ""),
-                new Case2("firefox", "", ""),
-        };
     }
 }

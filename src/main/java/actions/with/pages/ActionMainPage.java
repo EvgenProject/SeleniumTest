@@ -1,7 +1,9 @@
 package actions.with.pages;
 
+import constants.IAboutSchool;
 import constants.ITypeOfLending;
 import general.pages.MainPage;
+import general.pages.Page;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -117,15 +119,37 @@ public class ActionMainPage extends MainPage {
         return listDigitalTextbook;
     }
 
-    public ActionContactPage openContactWindow() {
+    public ActionContactHeaderPage openContactWindow() {
 
         contactLink.click();
         waitingElement(contactWindow);
-        return new ActionContactPage(driver);
+        return new ActionContactHeaderPage(driver);
     }
 
     public void hideContactWindow(){
         contactLink.click();
+    }
+
+    public Page getPageFromAboutSchool(String namePage){
+
+        scrollAction(containerAboutSchool.get(4));
+        String desireElement = null;
+        for (WebElement element : containerAboutSchool){
+
+            if(element.getText().equals(namePage)){
+                desireElement = element.getText();
+                element.click();
+                break;
+            }
+        }
+
+        switch (desireElement){
+            case (IAboutSchool.CONTACTS):
+                return new ActionContactPage(driver);
+
+            default:
+                return this;
+        }
     }
 
 }

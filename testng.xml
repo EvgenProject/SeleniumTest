@@ -5,23 +5,24 @@
 
     <test name = "Test">
         <classes>
-            <class name="tests.Test1"/>
+            <class name="factory.MainFactory"/>
         </classes>
     </test>
 
     <!--
 
-        <class name="tests.Test1"/>
-            <class name="tests.Test2"/>
+
+
+        <classes>
+            <class name="factory.MainFactory"/>
+        </classes>
 
         <test name="ChromeTestUkraine">
             <parameter name="browser" value="chrome"/>
             <parameter name="host" value=""/>
             <parameter name="port" value=""/>
 
-            <packages>
-                <package name="tests"/>
-            </packages>
+
 
         </test>
 

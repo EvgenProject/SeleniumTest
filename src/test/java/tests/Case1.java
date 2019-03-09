@@ -1,22 +1,19 @@
 package tests;
 
-import actions.with.pages.ActionContactPage;
+import actions.with.pages.ActionContactHeaderPage;
 import actions.with.pages.ActionMainPage;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Factory;
 import org.testng.annotations.Test;
 import settings.TestFrame;
 
-
-class Main extends TestFrame {
-
+public class Case1 extends TestFrame {
 
     ActionMainPage mainPage = null;
-    ActionContactPage contactPage = null;
+    ActionContactHeaderPage contactPage = null;
     private String browser, host, port;
 
-    Main(String browser, String host, String port){
+    public Case1(String browser, String host, String port){
         this.browser = browser;
         this.host = host;
         this.port = port;
@@ -27,37 +24,34 @@ class Main extends TestFrame {
         super.activateDriver(browser, host, port);
     }
 
-    @Test(enabled = false)
-    public void Test(){
+    /**
+     * Check contact number for different proxy (ip and port):
+     * <li>
+     *     - Ukraine
+     *     - CIS
+     *     - EUROPE
+     * </li>
+     */
+    @Test(enabled = true)
+    public void Test() {
 
+        //Step 1
         mainPage = new ActionMainPage(driver);
+        Assert.assertEquals(mainPage.getContactNumber(), mainPage.getNumberFromProxy());
+
+        //Step 2
         contactPage = mainPage.openContactWindow();
         Assert.assertEquals(contactPage.getContactNumber(), mainPage.getNumberFromProxy());
+
+        //Step3
         Assert.assertEquals(contactPage.getFormatNumberInField(), contactPage.getFormatByProxy());
         mainPage.hideContactWindow();
-        Assert.assertEquals(mainPage.getFormatNumberInField(), mainPage.getFormatByProxy());
+
+        //Step4
         Assert.assertEquals(mainPage.getFooterContactNumber(), mainPage.getNumberFromProxy());
 
-        //System.out.println(mainPage.getFormatNumberCallMeBackWindow());
+        //Step5
         Assert.assertEquals(mainPage.getFormatNumberCallMeBackWindow(), mainPage.getFormatByProxy());
 
-    }
-
-}
-
-public class SearchFactory{
-
-    @Factory
-    public Object [] createInstances() {
-        return new Object[] {
-                new Main("chrome", "", ""),
-                new Main("firefox", "", "")
-                /*new Main("chrome", "", ""),
-                new Main("firefox", "", "")
-                new Main("chrome", "78.40.87.18", "808"),
-                new Main("firefox", "78.40.87.18", "808"),
-                new Main("chrome", "194.25.1.196", "3128"),
-                new Main("firefox", "194.25.1.196", "3128")*/
-        };
     }
 }

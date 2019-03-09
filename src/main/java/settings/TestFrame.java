@@ -1,6 +1,7 @@
 package settings;
 
 import configurations.InputDataConstants;
+import constants.IBrowsers;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -22,15 +23,15 @@ public abstract class TestFrame {
     //@BeforeClass
     public void activateDriver(String browser, String host, String port)
     {
-        if (browser.equals(InputDataConstants.CHROME)) {
+        if (browser.equals(IBrowsers.chrome)) {
             System.setProperty("webdriver.chrome.driver", TestFrame.class.getClassLoader().
                     getResource("chromedriver").getPath());
             driver = new ChromeDriver(switchOffNotificationForChrome(host, port));
             getProxy(host, port);
         }
-        else if (browser.equals(InputDataConstants.FIREFOX)){
+        else if (browser.equals(IBrowsers.firefox)){
             System.setProperty("webdriver.gecko.driver", TestFrame.class.getClassLoader().
-                    getResource("geckodriver-v0.23.0-linux64/geckodriver").getPath());
+                    getResource("geckodriver").getPath());
             driver = new FirefoxDriver(switchOffNotificationForFirefox(host, port));
             getProxy(host, port);
         }

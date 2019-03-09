@@ -98,6 +98,10 @@ public class MainPage extends Page {
     @FindBy(id = "form-tel")
     protected WebElement fieldNumber;
 
+    @CacheLookup
+    @FindBy(xpath = "//div[@class='footer']/div[1]//div[3]//div[@class='wrapper-info']/a")
+    protected List <WebElement> containerAboutSchool;
+
     //inner windows
     @FindBy(xpath = "//div[@class='container-contacts-tooltip']")
     protected WebElement contactWindow;

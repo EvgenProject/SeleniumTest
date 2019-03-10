@@ -29,12 +29,7 @@ public class Main extends TestFrame {
 
         mainPage = new ActionMainPage(driver);
         contactPage = (ActionContactPage) mainPage.getPageFromAboutSchool(IAboutSchool.CONTACTS);
-        try {
 
-        }
-        catch (Exception e){
-            System.out.println(e.getStackTrace());
-        }
     }
 }
 

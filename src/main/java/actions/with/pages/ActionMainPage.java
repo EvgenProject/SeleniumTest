@@ -16,6 +16,7 @@ public class ActionMainPage extends MainPage {
 
     public ActionMainPage(WebDriver driver) {
         super(driver);
+
     }
 
     public void scrollAndClickStartFreeBtnOnHeader(){
@@ -150,6 +151,11 @@ public class ActionMainPage extends MainPage {
             default:
                 return this;
         }
+    }
+
+    public String getAddress(){
+        scrollAction(addressFooter);
+        return addressFooter.getText();
     }
 
 }

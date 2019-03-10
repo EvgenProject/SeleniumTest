@@ -7,6 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.*;
 
@@ -55,14 +56,15 @@ public abstract class TestFrame {
 
         FirefoxProfile profile = new FirefoxProfile();
         profile.setPreference("permissions.default.desktop-notification", 1);
+        DesiredCapabilities settings = DesiredCapabilities.firefox();
         if(!host.isEmpty() && !port.isEmpty()){
             profile.setPreference("network.proxy.type", 1);
             profile.setPreference("network.proxy.http", host);
             profile.setPreference("network.proxy.http_port", Integer.parseInt(port));
             profile.setPreference("network.proxy.ssl", host);
             profile.setPreference("network.proxy.ssl_port", Integer.parseInt(port));
+            settings.setCapability(CapabilityType.PAGE_LOAD_STRATEGY, "eager");
         }
-        DesiredCapabilities settings = DesiredCapabilities.firefox();
         settings.setCapability(FirefoxDriver.PROFILE, profile);
         return settings;
     }

@@ -105,4 +105,7 @@ public class MainPage extends Page {
     //inner windows
     @FindBy(xpath = "//div[@class='container-contacts-tooltip']")
     protected WebElement contactWindow;
+
+    @FindBy(xpath = "//a[@class='item-info']")
+    protected WebElement addressFooter ;
 }

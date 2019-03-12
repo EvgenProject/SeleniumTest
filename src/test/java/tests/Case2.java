@@ -38,10 +38,15 @@ public class Case2 extends TestFrame {
 
         mainPage = new ActionMainPage(driver);
 
+        //Step 1
         Assert.assertTrue(mainPage.isSelectLesson(ITypeOfLesson.DIGITAL_TUTORIAL));
+        //Step 2
         Assert.assertTrue(mainPage.isSelectLesson(ITypeOfLesson.SPEAKING_CLUBS));
+        //Step 3
         Assert.assertTrue(mainPage.isSelectLesson(ITypeOfLesson.IMMERSION_IN_ENGLISH));
+        //Step 4
         Assert.assertTrue(mainPage.isSelectLesson(ITypeOfLesson.PERSONAL_CABINET));
+        //Step 5
         Assert.assertTrue(mainPage.isSelectLesson(ITypeOfLesson.ONLINE_CLASSES));
     }
 }

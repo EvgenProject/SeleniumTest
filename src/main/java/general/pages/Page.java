@@ -1,8 +1,6 @@
 package general.pages;
 
-import constants.IContactNumbers;
-import constants.IFormatNumbers;
-import constants.IProxy;
+import constants.*;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
@@ -131,6 +129,36 @@ public abstract class Page {
 
             default:
                 return IContactNumbers.UKRAINE;
+        }
+    }
+
+    public String getAddressByProxy(){
+
+        switch (TestFrame.proxy){
+
+            case IProxy.CIS:
+                return IAddress.ADDRESS_CIS;
+
+            case IProxy.EUROPE:
+                return IAddress.ADDRESS_EUROPE;
+
+            default:
+                return IAddress.ADDRESS_UK;
+        }
+    }
+
+    public String getCountryByProxy(){
+
+        switch (TestFrame.proxy){
+
+            case IProxy.CIS:
+                return ICountry.CIS;
+
+            case IProxy.EUROPE:
+                return ICountry.EUROPE;
+
+            default:
+                return ICountry.UK;
         }
     }
 

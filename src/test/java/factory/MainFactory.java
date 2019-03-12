@@ -8,7 +8,7 @@ import tests.Main;
 
 public class MainFactory {
 
-    //@Factory
+    @Factory
     public Object [] createInstances() {
         return new Object[] {
 
@@ -23,16 +23,16 @@ public class MainFactory {
         };
     }
 
-    @Factory
+    //@Factory
     public Object [] createInstancesTest() {
         return new Object[] {
 
-                new Main(IBrowsers.chrome, "", ""),
-                new Main(IBrowsers.firefox, "", ""),
+                /*new Main(IBrowsers.chrome, "", ""),
+                new Main(IBrowsers.firefox, "", ""),*/
                 new Main(IBrowsers.chrome, "78.40.87.18", "808"),
-                new Main(IBrowsers.firefox, "78.40.87.18", "808"),
+                new Main(IBrowsers.firefox, "78.40.87.18", "808")/*,
                 new Main(IBrowsers.chrome, "194.25.1.196", "3128"),
-                new Main(IBrowsers.firefox, "194.25.1.196", "3128")
+                new Main(IBrowsers.firefox, "194.25.1.196", "3128")*/
         };
     }
 }

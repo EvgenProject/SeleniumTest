@@ -2,6 +2,7 @@ package tests;
 
 import actions.with.pages.*;
 import constants.IAboutSchool;
+import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import settings.TestFrame;
@@ -29,6 +30,10 @@ public class Main extends TestFrame {
 
         mainPage = new ActionMainPage(driver);
         contactPage = (ActionContactPage) mainPage.getPageFromAboutSchool(IAboutSchool.CONTACTS);
+
+        Assert.assertEquals(contactPage.getContactNumber(), contactPage.getNumberFromProxy());
+        Assert.assertEquals(contactPage.getCountry(), contactPage.getCountryByProxy());
+        Assert.assertEquals(contactPage.getAddress(), contactPage.getAddressByProxy());
 
     }
 }

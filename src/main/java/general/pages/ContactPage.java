@@ -14,7 +14,7 @@ public class ContactPage extends Page{
     }
 
     @CacheLookup
-    @FindBy(xpath = "//div[@class='b-contacts']//a[@href='tel:0800330066']")
+    @FindBy(xpath = "//div[@class='wrap-item-contacts']//div[@class='phone line-item js-phone']/a")  //
     protected WebElement contactNumber;
 
     @CacheLookup

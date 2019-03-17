@@ -1,6 +1,5 @@
 package settings;
 
-import configurations.InputDataConstants;
 import constants.IBrowsers;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -11,6 +10,7 @@ import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.*;
 
+import java.util.logging.Logger;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -19,21 +19,25 @@ public abstract class TestFrame {
 
     protected WebDriver driver;
     public static String proxy = null;
+    public static Logger logger;
 
     //@Parameters({"browser", "host", "port"})
     //@BeforeClass
     public void activateDriver(String browser, String host, String port)
     {
-        if (browser.equals(IBrowsers.chrome)) {
+        runLogger();
+        if (browser.equals(IBrowsers.CHROME)) {
             System.setProperty("webdriver.chrome.driver", TestFrame.class.getClassLoader().
                     getResource("chromedriver").getPath());
             driver = new ChromeDriver(switchOffNotificationForChrome(host, port));
+            logger.info(IBrowsers.CHROME + " is running.");
             getProxy(host, port);
         }
-        else if (browser.equals(IBrowsers.firefox)){
+        else if (browser.equals(IBrowsers.FIREFOX)){
             System.setProperty("webdriver.gecko.driver", TestFrame.class.getClassLoader().
                     getResource("geckodriver").getPath());
             driver = new FirefoxDriver(switchOffNotificationForFirefox(host, port));
+            logger.info(IBrowsers.FIREFOX + " is running.");
             getProxy(host, port);
         }
 
@@ -44,6 +48,7 @@ public abstract class TestFrame {
 
     private ChromeOptions switchOffNotificationForChrome(String host, String port) {
 
+        logger.info(host + ":" + port + " is used for " + IBrowsers.CHROME);
         Map <String, Object> prefs = new HashMap<>();
         prefs.put("profile.default_content_setting_values.notifications", 2);
         ChromeOptions settings = new ChromeOptions();
@@ -54,6 +59,7 @@ public abstract class TestFrame {
 
     private DesiredCapabilities switchOffNotificationForFirefox(String host, String port) {
 
+        logger.info(host + ":" + port + " is used for " + IBrowsers.FIREFOX);
         FirefoxProfile profile = new FirefoxProfile();
         profile.setPreference("permissions.default.desktop-notification", 1);
         DesiredCapabilities settings = DesiredCapabilities.firefox();
@@ -69,6 +75,11 @@ public abstract class TestFrame {
         return settings;
     }
 
+    private void runLogger(){
+        logger = Logger.getLogger(TestFrame.class.getName());
+        logger.info("Logger is running.");
+    }
+
     private void getProxy(String host, String port){
         proxy =  host + ":" + port;
     }
@@ -76,7 +87,10 @@ public abstract class TestFrame {
     @AfterClass
     public void quiteDriver(){
 
-        if(driver != null) driver.quit();
+        if(driver != null){
+            driver.quit();
+            logger.info("Driver stopped.");
+        }
     }
 
 }

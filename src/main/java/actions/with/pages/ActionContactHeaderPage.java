@@ -21,7 +21,16 @@ public class ActionContactHeaderPage extends ContactHeaderPage {
     }
 
     public String getFormatNumberInField(){
-        waitingElement(fieldNumber);
+
+        if(fieldNumber.getAttribute("placeholder").isEmpty()){
+            try {
+                Thread.sleep(3000);
+            }
+            catch (Exception e){
+                e.getStackTrace();
+            }
+        }
+
         return fieldNumber.getAttribute("placeholder");
     }
 

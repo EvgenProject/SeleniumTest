@@ -79,11 +79,10 @@ public abstract class Page {
         }
     }
 
-    public void waiting(){
+    public void waiting(int timeSecond){
 
         try {
-            WebDriverWait wait = new WebDriverWait(this.driver, 5);
-            wait.withTimeout(5, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(timeSecond, TimeUnit.SECONDS);
             //wait.until();
         }
         catch (TimeoutException e){

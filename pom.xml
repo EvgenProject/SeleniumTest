@@ -43,6 +43,10 @@
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
+            <plugin>
+                <artifactId>maven-site-plugin</artifactId>
+                <version>3.7.1</version>
+            </plugin>
         </plugins>
         <defaultGoal>clean install</defaultGoal>
     </build>

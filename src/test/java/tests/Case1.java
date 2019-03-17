@@ -40,6 +40,8 @@ public class Case1 extends TestFrame {
 
         //Step 1
         mainPage = new ActionMainPage(driver);
+        System.out.println(browser + " " + mainPage.getCountryByProxy());
+
         Assert.assertEquals(mainPage.getContactNumber(), mainPage.getNumberFromProxy());
 
         //Step 2

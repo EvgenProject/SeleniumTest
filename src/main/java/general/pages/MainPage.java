@@ -43,15 +43,13 @@ public class MainPage extends Page {
     protected WebElement onlineSimulatorBtn;
 
 
-    @CacheLookup
+
     @FindBy(xpath = "//div[@class = 'info-promo']//a[@href = '/']")
     protected WebElement individLink;
 
-    @CacheLookup
     @FindBy(xpath = "//div[@class = 'info-promo']//a[@href = '/kids']")
     protected WebElement childrenLink;
 
-    @CacheLookup
     @FindBy(xpath = "//div[@class = 'info-promo']//a[@href = '/corp']")
     protected WebElement companiesLink;
 
@@ -66,7 +64,6 @@ public class MainPage extends Page {
     @FindBy(xpath = "//div[@class = 'main-container']//div[@class = 'arrow-down js-arrow-down']")
     protected WebElement arrowDown;
 
-    @CacheLookup
     @FindBy(xpath = "//div[@class = 'wrap-info-promo fadeIn is-viewed is-animate']/div[1]")
     protected WebElement typeOfLesson;
 

@@ -2,6 +2,7 @@ package tests;
 
 import actions.with.pages.*;
 import constants.IAboutSchool;
+import constants.ITypeOfLending;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -29,12 +30,17 @@ public class Main extends TestFrame {
     public void Test(){
 
         mainPage = new ActionMainPage(driver);
-        contactPage = (ActionContactPage) mainPage.getPageFromAboutSchool(IAboutSchool.CONTACTS);
 
-        Assert.assertEquals(contactPage.getContactNumber(), contactPage.getNumberFromProxy());
-        Assert.assertEquals(contactPage.getCountry(), contactPage.getCountryByProxy());
-        Assert.assertEquals(contactPage.getAddress(), contactPage.getAddressByProxy());
+        //Step1
+        Assert.assertTrue(mainPage.chooseTypeLending(ITypeOfLending.FOR_CHILDREN));
+
+        //Step2
+        Assert.assertTrue(mainPage.chooseTypeLending(ITypeOfLending.FOR_COMPANY));
+
+        //Step3
+        Assert.assertTrue(mainPage.chooseTypeLending(ITypeOfLending.INDIVIDUAL));
 
     }
+
 }
 

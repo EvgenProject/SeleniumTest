@@ -2,6 +2,6 @@ package constants;
 
 public interface IBrowsers {
 
-    String chrome = "chrome";
-    String firefox = "firefox";
+    String CHROME = "chrome";
+    String FIREFOX = "firefox";
 }

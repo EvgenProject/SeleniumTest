@@ -42,7 +42,7 @@ public class ActionMainPage extends MainPage {
         clickOnBtnOrLink(arrowDown);
     }
 
-    public void chooseTypeLessons(String attribute){
+    public boolean chooseTypeLending(String attribute){
 
         if(!super.isElementChosen(typeOfLesson, "class", attribute)){
 
@@ -50,20 +50,27 @@ public class ActionMainPage extends MainPage {
 
                 case ITypeOfLending.INDIVIDUAL:
                     clickOnBtnOrLink(individLink);
-                    break;
+                    return super.isElementChosen(typeOfLesson, "class", attribute);
 
                 case ITypeOfLending.FOR_CHILDREN:
                     clickOnBtnOrLink(childrenLink);
-                    break;
+                    return super.isElementChosen(typeOfLesson, "class", attribute);
 
                 case ITypeOfLending.FOR_COMPANY:
                     clickOnBtnOrLink(companiesLink);
-                    break;
+                    return super.isElementChosen(typeOfLesson, "class", attribute);
+
+                default:
+                    return false;
             }
         }
         else{
-            System.out.println("Necessary type is already chosen!");
+            return true;
         }
+    }
+
+    public void isSelectButton(String attribute){
+        System.out.println(super.isElementChosen(typeOfLesson, "class", attribute));
     }
 
     public boolean isSelectLesson(String necessaryElement){

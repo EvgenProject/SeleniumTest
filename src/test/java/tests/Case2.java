@@ -1,6 +1,6 @@
 package tests;
 
-import actions.with.pages.ActionMainPage;
+import actions.with.pages.ActionWelcomePage;
 import constants.ITypeOfLesson;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
@@ -9,7 +9,7 @@ import settings.TestFrame;
 
 public class Case2 extends TestFrame {
 
-    ActionMainPage mainPage = null;
+    ActionWelcomePage welcomePage = null;
     private String browser, host, port;
 
     public Case2(String browser, String host, String port){
@@ -36,17 +36,17 @@ public class Case2 extends TestFrame {
     @Test(enabled = true)
     public void Test() {
 
-        mainPage = new ActionMainPage(driver);
+        welcomePage = new ActionWelcomePage(driver);
 
         //Step 1
-        Assert.assertTrue(mainPage.isSelectLesson(ITypeOfLesson.DIGITAL_TUTORIAL));
+        Assert.assertTrue(welcomePage.isSelectLesson(ITypeOfLesson.DIGITAL_TUTORIAL));
         //Step 2
-        Assert.assertTrue(mainPage.isSelectLesson(ITypeOfLesson.SPEAKING_CLUBS));
+        Assert.assertTrue(welcomePage.isSelectLesson(ITypeOfLesson.SPEAKING_CLUBS));
         //Step 3
-        Assert.assertTrue(mainPage.isSelectLesson(ITypeOfLesson.IMMERSION_IN_ENGLISH));
+        Assert.assertTrue(welcomePage.isSelectLesson(ITypeOfLesson.IMMERSION_IN_ENGLISH));
         //Step 4
-        Assert.assertTrue(mainPage.isSelectLesson(ITypeOfLesson.PERSONAL_CABINET));
+        Assert.assertTrue(welcomePage.isSelectLesson(ITypeOfLesson.PERSONAL_CABINET));
         //Step 5
-        Assert.assertTrue(mainPage.isSelectLesson(ITypeOfLesson.ONLINE_CLASSES));
+        Assert.assertTrue(welcomePage.isSelectLesson(ITypeOfLesson.ONLINE_CLASSES));
     }
 }

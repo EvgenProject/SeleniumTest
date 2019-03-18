@@ -1,6 +1,6 @@
 package tests;
 
-import actions.with.pages.ActionMainPage;
+import actions.with.pages.ActionWelcomePage;
 import constants.ITypeOfLending;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
@@ -9,7 +9,7 @@ import settings.TestFrame;
 
 public class Case3 extends TestFrame {
 
-    ActionMainPage mainPage = null;
+    ActionWelcomePage welcomePage = null;
     private String browser, host, port;
 
     public Case3(String browser, String host, String port){
@@ -26,16 +26,16 @@ public class Case3 extends TestFrame {
     @Test()
     public void Test(){
 
-        mainPage = new ActionMainPage(driver);
+        welcomePage = new ActionWelcomePage(driver);
 
         //Step1
-        Assert.assertTrue(mainPage.chooseTypeLending(ITypeOfLending.FOR_CHILDREN));
+        Assert.assertTrue(welcomePage.chooseTypeLending(ITypeOfLending.FOR_CHILDREN));
 
         //Step2
-        Assert.assertTrue(mainPage.chooseTypeLending(ITypeOfLending.FOR_COMPANY));
+        Assert.assertTrue(welcomePage.chooseTypeLending(ITypeOfLending.FOR_COMPANY));
 
         //Step3
-        Assert.assertTrue(mainPage.chooseTypeLending(ITypeOfLending.INDIVIDUAL));
+        Assert.assertTrue(welcomePage.chooseTypeLending(ITypeOfLending.INDIVIDUAL));
 
     }
 }

@@ -1,5 +1,6 @@
-package general.pages;
+package general.pages.welcome.pages;
 
+import general.pages.Page;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;

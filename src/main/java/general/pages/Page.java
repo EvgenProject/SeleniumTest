@@ -40,6 +40,10 @@ public abstract class Page {
         return element.getAttribute(component).equals(attribute);
     }
 
+    public boolean isElementChosen(WebElement element, String component){
+        return element.getAttribute(component).contains("is-active");
+    }
+
     public void scroll(int pointX, int pointY){
 
         js.executeScript("scroll(" + pointX + "," + pointY +");");

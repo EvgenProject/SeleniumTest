@@ -1,5 +1,6 @@
-package general.pages;
+package general.pages.welcome.pages;
 
+import general.pages.Page;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
@@ -8,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class ContactHeaderPage extends Page{
+public class ContactHeaderPage extends Page {
 
     public ContactHeaderPage(WebDriver driver) {
         super(driver);

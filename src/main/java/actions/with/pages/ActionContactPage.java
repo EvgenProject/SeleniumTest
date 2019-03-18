@@ -1,7 +1,7 @@
 package actions.with.pages;
 
 import constants.IProxy;
-import general.pages.ContactPage;
+import general.pages.welcome.pages.ContactPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

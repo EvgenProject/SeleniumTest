@@ -2,7 +2,7 @@ package tests;
 
 import actions.with.pages.ActionContactHeaderPage;
 import actions.with.pages.ActionContactPage;
-import actions.with.pages.ActionMainPage;
+import actions.with.pages.ActionWelcomePage;
 import constants.IAboutSchool;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
@@ -11,7 +11,7 @@ import settings.TestFrame;
 
 public class Case1 extends TestFrame {
 
-    ActionMainPage mainPage = null;
+    ActionWelcomePage welcomePage = null;
     ActionContactHeaderPage contactPageHeader = null;
     ActionContactPage contactPage = null;
     private String browser, host, port;
@@ -39,30 +39,30 @@ public class Case1 extends TestFrame {
     public void Test() {
 
         //Step 1
-        mainPage = new ActionMainPage(driver);
-        System.out.println(browser + " " + mainPage.getCountryByProxy());
+        welcomePage = new ActionWelcomePage(driver);
+        System.out.println(browser + " " + welcomePage.getCountryByProxy());
 
-        Assert.assertEquals(mainPage.getContactNumber(), mainPage.getNumberFromProxy());
+        Assert.assertEquals(welcomePage.getContactNumber(), welcomePage.getNumberFromProxy());
 
         //Step 2
-        contactPageHeader = mainPage.openContactWindow();
-        Assert.assertEquals(contactPageHeader.getContactNumber(), mainPage.getNumberFromProxy());
+        contactPageHeader = welcomePage.openContactWindow();
+        Assert.assertEquals(contactPageHeader.getContactNumber(), welcomePage.getNumberFromProxy());
 
         //Step3
         Assert.assertEquals(contactPageHeader.getFormatNumberInField(), contactPageHeader.getFormatByProxy());
-        mainPage.hideContactWindow();
+        welcomePage.hideContactWindow();
 
         //Step4
-        Assert.assertEquals(mainPage.getFooterContactNumber(), mainPage.getNumberFromProxy());
+        Assert.assertEquals(welcomePage.getFooterContactNumber(), welcomePage.getNumberFromProxy());
 
         //Step5
-        Assert.assertEquals(mainPage.getFormatNumberCallMeBackWindow(), mainPage.getFormatByProxy());
+        Assert.assertEquals(welcomePage.getFormatNumberCallMeBackWindow(), welcomePage.getFormatByProxy());
 
         //Step6
-        Assert.assertEquals(mainPage.getAddress(), mainPage.getAddressByProxy());
+        Assert.assertEquals(welcomePage.getAddress(), welcomePage.getAddressByProxy());
 
         //Step7
-        contactPage = (ActionContactPage) mainPage.getPageFromAboutSchool(IAboutSchool.CONTACTS);
+        contactPage = (ActionContactPage) welcomePage.getPageFromAboutSchool(IAboutSchool.CONTACTS);
         Assert.assertEquals(contactPage.getContactNumber(), contactPageHeader.getNumberFromProxy());
 
         //Step8
